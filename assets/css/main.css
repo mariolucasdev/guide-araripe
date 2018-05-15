@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Skranji');
+
+.jumbotron {
+  background-image: url(../img/bkg.png);
+  background-size: 100%;
+  background-position: center;
+}
+.jumbotron h1#title {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 10px #000;
+  font-family: 'Skranji', cursive;
+}
+.jumbotron input {
+  box-shadow: 1px 1px 5px #000;
+}
+.jumbotron input::selection {
+  box-shadow: 1px 1px 10px #000;
+}
+.card-img {
+  position: relative;
+  background-color: #000;
+  border-radius: 10px;
+}
+.container-categories img {
+  width: 100%;
+  opacity: 0.8;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+.container-categories img:hover {
+  transform: perspective(10px);
+  opacity: 1;
+  transition: 0.5s;
+}
+.container-categories h3 {
+}
+.container-categories a:hover {
+  text-decoration: none;
+}
+.card-img h2 {
+  text-indent: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px #000;
+  padding: 110px 0px 10px;
+}
+.btn-add {
+  background-color: #2ecc71;
+  color: #fff;
+}
+button.btn-add:hover {
+  background-color: #27ae60;
+  color: #fff;
+}
+button.btn-add:focus {
+  background-color: #27ae60;
+  color: #fff;
+  outline: none;
+}
