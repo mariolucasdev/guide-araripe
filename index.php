@@ -1,10 +1,12 @@
 <?php
 require 'classes/Categories.php';
+require 'classes/Places.php';
 require 'classes/Cities.php';
 
 $c = new Categories();
-$categories = $c->getCategories();
+$p = new Places();
 $ci = new Cities();
+$categories = $c->getCategories();
 $cities = $ci->getCities();
 ?>
 
@@ -46,7 +48,12 @@ $cities = $ci->getCities();
         <h1> Filtros</h1><br>
         <ul class="list-group">
           <?php foreach ($cities as $city): ?>
-            <a href="place.php?filter=city&alias=<?=$city['alias']?>" type="button" class="list-group-item"><span class="badge">14</span><?=ucfirst($city['name'])?></a>
+            <a href="place.php?filter=true&city=<?=$city['alias']?>" type="button" class="list-group-item">
+              <span class="badge">
+                <?=$p->countPlacesCity($city['alias'])?>
+              </span>
+              <?=ucfirst($city['name'])?>
+            </a>
           <?php endforeach; ?>
         </ul>
 
@@ -58,7 +65,7 @@ $cities = $ci->getCities();
         <div class="container-categories">
           <?php foreach ($categories as $categorie): ?>
             <div class="card col-md-4">
-              <a href="categories.php?category=<?=$categorie['alias']?>">
+              <a href="categories.php?filter=true&category=<?=$categorie['alias']?>">
                 <div class="card-img" style="background-image: url(assets/img/categories/<?=$categorie['image']?>)">
                   <h2 class="card-title"><?=$categorie['name']?></h2>
                 </div>
